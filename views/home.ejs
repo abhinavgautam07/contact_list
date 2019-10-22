@@ -1,0 +1,39 @@
+<html>
+    <head>
+       
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  
+   
+        <link rel="stylesheet" href="/css/home.css">
+<title>
+   
+</title>
+    </head>
+    <body>
+        <h1><span><i class="fa fa-book"></i></span>
+            my contacts list</h1>
+<div id="contact-container">
+    <ol>
+   <%for(let i of contacts) {%>
+<li>
+    <div class="div-container">
+   <p><%=i.name %></p> 
+   <p><%=i.phone %></p> 
+   <p><a href="/delete-contact/?id=<%=i._id%>"><span style="height: 20px;margin-right: 5px;"><i class="fa fa-trash color-red"></i></span></a></p>
+</div>
+</li>
+
+
+  <% }
+  %>
+
+    </ol></div>
+
+<form action="/create-contact" method="POST">
+    <input class="design" type="text"  name="name"placeholder="name" required>
+    <input type="number"class="design" name="phone" placeholder="phoneNo" required>
+    <button  id="btn" type="submit">ADD</button>
+</form>
+                                                                            
+
+    </body>
+</html>
